@@ -1,7 +1,7 @@
 import unittest
 from hamcrest import assert_that, equal_to
 
-from mnlg.transform import MatchName, DeepDive
+from lxslt import MatchName, DeepDive
 
 
 class DeepDiveTest(unittest.TestCase):

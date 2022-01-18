@@ -1,8 +1,8 @@
 import unittest
 from hamcrest import assert_that, equal_to
 
-from mnlg.transform import Children, Projector, TreeNode, IterableNodeSet
-from mnlg.transform import MatchName, SelectStep, select, SelectStepNorm
+from lxslt import Children, Projector, TreeNode, IterableNodeSet
+from lxslt import MatchName, SelectStep, select, SelectStepNorm
 
 tree = ['tree', ['child1', 'a'], ['child2', 'b'], ['child1', 'c'],
         ['child2', ['sub-child2', 'd']], ['child2']]

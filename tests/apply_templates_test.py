@@ -1,6 +1,6 @@
 import unittest
 from hamcrest import assert_that, equal_to
-from mnlg.transform import apply_templates, MatchName, Replace, Rule
+from lxslt import apply_templates, MatchName, Replace, Rule
 
 
 class ApplyTemplatesTest(unittest.TestCase):
