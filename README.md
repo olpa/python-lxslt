@@ -2,10 +2,10 @@
 
 ## Installation
 
-TODO
+Select a zip on the [releases page](https://github.com/olpa/python-lxslt/releases), give the path to `pip` directly or through `requirements.txt`.
 
 ```
-pip install path_to_zip
+pip install https://github.com/olpa/python-lxslt/archive/refs/tags/v0.1.0.zip
 ```
 
 ## Sample XPath-like
