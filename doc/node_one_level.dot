@@ -1,0 +1,17 @@
+digraph {
+
+nodeRoot [label="\"root\""]
+nodeChild1 [label="child1"]
+nodeSkip [label="..."]
+nodeChildN [label="childN"]
+nodeSubTree1 [label=""; shape=triangle]
+nodeSubTreeN [label=""; shape=triangle]
+
+nodeRoot -> nodeChild1
+nodeRoot -> nodeSkip
+nodeRoot -> nodeChildN
+
+nodeChild1 -> nodeSubTree1
+nodeChildN -> nodeSubTreeN
+
+}

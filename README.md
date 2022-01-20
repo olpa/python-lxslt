@@ -55,4 +55,39 @@ $ python sample-xslt.py
 
 # Documentation
 
-TODO
+## L-expression
+
+L-expressions, or just lexp, where "L" stands for "list", use Python lists to represent trees. An example: a node with children:
+
+![](doc/node_one_level.png)
+
+The corresponding lexp:
+
+```
+["root", child1, ..., childN]
+```
+
+The first element (the index "0") of the list is the parent node. The type of the element should be "string". The rest of the list are children, from left to right.
+
+As a convenience, the leafes can be represented as strings instead of one-element lists:
+
+```
+# The most correct definition
+["root", ["leaf-child1"], ..., ["leaf-childN"]]
+# Supported alternative
+["root", "leaf-child1", ..., "leaf-childN"]
+```
+
+## Nodeset
+
+If the first element of the list is _not a string_, then the list is _not a node_ but a _list of nodes_, or _nodeset_.
+
+```
+nodeset = [["node1", ...], ["node2", ...], ["node3", ...]]
+node = ["new-node", *nodeset]
+```
+
+In the example above, the variable `nodeset` defines a nodeset of three nodes, `node1`, `node2` and `node3`.
+
+If one prepends a string to a nodeset, one gets a normal node (in the example, the variable `node`). If one has a node and takes everything without the first element, he gets a nodeset.
+
