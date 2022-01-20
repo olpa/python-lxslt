@@ -91,3 +91,35 @@ In the example above, the variable `nodeset` defines a nodeset of three nodes, `
 
 If one prepends a string to a nodeset, one gets a normal node (in the example, the variable `node`). If one has a node and takes everything without the first element, he gets a nodeset.
 
+# Node and nodeset functions
+
+The following types are defined:
+
+- `TreeNode` for a node
+- `NodeSet` for a nodeset
+- `IteratableNodeSet` for a nodeset that is not a list but an `Iteratable`
+
+**is_node**(node: typing.Union[TreeNode, NodeSet]) -> bool
+
+**is_node_set**(node: typing.Union[TreeNode, NodeSet]) -> bool
+
+The functions get a list as input and report if the list is a node or a nodeset. If the input is not a list, then the both functions return `False`.
+
+**to_node_set**(node: typing.Union[TreeNode, NodeSet]) -> NodeSet
+
+If input is a nodeset, return it unchanged. Otherwise, assume the input is a node and wrap it by a list, this way making a one-element nodeset.
+
+
+**flatten_node_sets**(node_sets: typing.Iterable[IterableNodeSet]
+                      ) -> IterableNodeSet
+
+Return a nodeset from a list of nodesets.
+
+**debug_print**(prefix: str, node_set: IterableNodeSet) -> IterableNodeSet
+
+A helper to debug xpath/xslt functions. Prints the nodeset and returns it back. Can be used as a step in xpath.
+
+**normalize_level**(node: TreeNode) -> typing.Generator[TreeNode, None, None]
+
+TODO
+
